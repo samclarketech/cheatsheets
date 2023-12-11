@@ -74,3 +74,16 @@ netshareenumall
 msfconsole
 search type:auxiliary name:smb
 ```
+
+## More
+https://book.hacktricks.xyz/windows-hardening/active-directory-methodology
+```bash
+enum4linux -a -u "" -p "" <DC IP>
+enum4linux -a -u "guest" -p "" <DC IP>
+
+smbmap -u "" -p "" -P 445 -H <DC IP>
+smbmap -u "guest" -p "" -P 445 -H <DC IP>
+
+smbclient -U '%' -L //<DC IP>
+smbclient -U 'guest%' -L //
+```
